@@ -87,12 +87,12 @@ BITTORRENTCLIENT/
 ### Usage
 
 ```bash
-go run main.go [torrent-file]
+go run main.go [torrent-file] [output_file]
 ```
 
 Example:
 ```bash
-go run main.go debian-12.11.0-amd64-netinst.iso.torrent
+go run main.go debian-12.11.0-amd64-netinst.iso.torrent output.iso
 ```
 
 ## Components
