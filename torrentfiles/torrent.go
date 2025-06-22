@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"os"
 
+	"BITTORRENTCLIENT/p2p"
 	"github.com/jackpal/bencode-go"
-	"github.com/veggiedefender/torrent-client/p2p"
 )
 
 const PORT uint16 = 6881 // as given in the article
@@ -103,7 +103,7 @@ func (i *bencodeInfo) splitPieceHashes() ([][20]byte ,error){
 	hashLen := 20 // lenght of each sha1 hash
 	buf:=[]byte(i.Pieces) // size of total concat sha1 pieces
 	if len(buf)%hashLen!=0{
-		err:=fmt.Errorf("Received malformed pieces of length %d", len(buf))
+		err:=fmt.Errorf("received malformed pieces of length %d", len(buf))
 		return nil, err
 	}
 	numHashes := len(buf)/hashLen

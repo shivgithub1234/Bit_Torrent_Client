@@ -6,12 +6,12 @@ import (
 	"net"
 	"time"
 
-	"github.com/veggiedefender/torrent-client/bitfield"
-	"github.com/veggiedefender/torrent-client/peers"
+	"BITTORRENTCLIENT/bitfield"
+	"BITTORRENTCLIENT/peers"
 
-	"github.com/veggiedefender/torrent-client/message"
+	"BITTORRENTCLIENT/message"
 
-	"github.com/veggiedefender/torrent-client/handshake"
+	"BITTORRENTCLIENT/handshake"
 )
 
 // A Client is a TCP connection with a peer
@@ -39,7 +39,7 @@ func completeHandshake(conn net.Conn, infohash, peerID [20]byte) (*handshake.Han
 		return nil, err
 	}
 	if !bytes.Equal(res.InfoHash[:], infohash[:]) {
-		return nil, fmt.Errorf("Expected infohash %x but got %x", res.InfoHash, infohash)
+		return nil, fmt.Errorf("expected infohash %x but got %x", res.InfoHash, infohash)
 	}
 	return res, nil
 }
@@ -53,7 +53,7 @@ func recvBitfield(conn net.Conn) (bitfield.Bitfield, error) {
 		return nil, err
 	}
 	if msg.ID != message.MsgBitfield {
-		err := fmt.Errorf("Expected bitfield but got ID %d", msg.ID)
+		err := fmt.Errorf("expected bitfield but got ID %d", msg.ID)
 		return nil, err
 	}
 
