@@ -2,6 +2,8 @@
 
 This project is an implementation of a **BitTorrent client**, a peer-to-peer (P2P) protocol for downloading and distributing files over the Internet. Unlike traditional client-server models—such as streaming a video on Netflix or loading a website—BitTorrent enables users (called **peers**) to download pieces of files **from each other**, making it a fully decentralized file-sharing system.
 
+![image](https://github.com/user-attachments/assets/1311f768-6dfc-43ad-b336-8837c455a2c2)
+
 ---
 
 ## 🔍 Overview
